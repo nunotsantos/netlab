@@ -7,6 +7,8 @@ I'm using pnpm, btw
 To do: 
   Replace FontAwesome Icons with NerdFonts.
   Replace Fonts with  
+  And to fix these warnings:
+![pnpm warnings](pnpm-warnings.png?raw=true "pnpm warnings")
 
 # nextjs-starter-dimension
 A Next.js starter based on the Dimension site template, designed by HTML5 UP. Check out https://codebushi.com/nextjs-website-starters/ for more Next.js starters and templates.
