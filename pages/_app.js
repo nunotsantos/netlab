@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import '../styles/main.scss'
+import '../styles/main.scss';
 import Footer from '../components/Footer'
 function MyApp({ Component, pageProps }) {
   return (

@@ -1,3 +1,13 @@
+# dimension - next
+
+Hey, It's working!  I had to comment out some bits and refactor some other parts, but it's up and running on Next13 with React18
+
+I'm using pnpm, btw
+
+To do: 
+  Replace FontAwesome Icons with NerdFonts.
+  Replace Fonts with  
+
 # nextjs-starter-dimension
 A Next.js starter based on the Dimension site template, designed by HTML5 UP. Check out https://codebushi.com/nextjs-website-starters/ for more Next.js starters and templates.
 

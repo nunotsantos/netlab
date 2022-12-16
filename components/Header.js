@@ -6,7 +6,7 @@ const Header = (props) => (
     <header id="header" style={props.timeout ? {display: 'none'} : {}}>
         <div className="logo">
             {/*<span className="icon fa-diamond"></span>*/}
-            <FontAwesomeIcon icon={faGem} transform="grow-18" />
+            <p>FontAwesomeIcon icon= faGem transform="grow-18"</p>
         </div>
         <div className="content">
             <div className="inner">
