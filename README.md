@@ -5,8 +5,8 @@ Hey, It's working!  I had to comment out some bits and refactor some other parts
 I'm using pnpm, btw
 
 To do: 
-  Replace FontAwesome Icons with NerdFonts.
-  Replace Fonts with  
+  Replace FontAwesome Icons with ~NerdFonts~ something else.
+  Replace Fonts with better ones like Mona and Hubot.
   And to fix these warnings:
   <img src="pnpm-warnings.png" alt="pnpm warnings" title="Pnpm Warnings">
 

@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types';
+import Image from "next/image";
+import SVGIMG from "../public/diamond.svg";
 
 const Header = (props) => (
     <header id="header" style={props.timeout ? {display: 'none'} : {}}>
         <div className="logo">
-        icon
+        <Image src={SVGIMG} alt={""}/>
         </div>
         <div className="content">
             <div className="inner">
