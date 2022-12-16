@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 const Header = (props) => (
     <header id="header" style={props.timeout ? {display: 'none'} : {}}>
         <div className="logo">
-        <ion-icon name="heart"></ion-icon>
+        icon
         </div>
         <div className="content">
             <div className="inner">
-                <h1>Dimension</h1>
+                <h1>Dimension for NextJS 13</h1>
                 <p>A fully responsive site template designed by <a href="https://html5up.net">HTML5 UP</a> and released<br />
-                for free under the <a href="https://html5up.net/license">Creative Commons</a> license.</p>
+                for free under the <a href="https://html5up.net/license">Creative Commons</a> license. Subsequently refactored<br />
+                 by <a href="https://github.com/crenaz/">@crenaz</a> for <a href="https://reactjs.org/blog/2022/03/29/react-v18.html">React18</a> and <a href="https://nextjs.org/blog/next-13">Next13</a> with <a href="https://partytown.builder.io/">PartyTown</a></p>
             </div>
         </div>
         <nav>

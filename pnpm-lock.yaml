@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@builder.io/partytown': ^0.7.3
+  '@fortawesome/fontawesome-free': ^6.2.1
   eslint: 8.28.0
   eslint-config-next: 13.0.6
   next: 13.0.6
@@ -12,6 +13,7 @@ specifiers:
 
 dependencies:
   '@builder.io/partytown': 0.7.3
+  '@fortawesome/fontawesome-free': 6.2.1
   eslint: 8.28.0
   eslint-config-next: 13.0.6_wy4udjehnvkneqnogzx5kughki
   next: 13.0.6_iburw4xngv4nuxezlam7kbvdc4
@@ -57,6 +59,12 @@ packages:
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /@fortawesome/fontawesome-free/6.2.1:
+    resolution: {integrity: sha512-viouXhegu/TjkvYQoiRZK3aax69dGXxgEjpvZW81wIJdxm5Fnvp3VVIP4VHKqX4SvFw6qpmkILkD4RJWAdrt7A==}
+    engines: {node: '>=6'}
+    requiresBuild: true
     dev: false
 
   /@humanwhocodes/config-array/0.11.8:

@@ -80,7 +80,7 @@ class IndexPage extends React.Component {
                         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600,600i" rel="stylesheet" />
                         <Partytown debug={true} forward={['dataLayer.push']} />
                     </Head>
-                        <Script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" type="text/partytown" />
+                        <Script src="#" type="text/partytown" />
                     
 
                     <style />
