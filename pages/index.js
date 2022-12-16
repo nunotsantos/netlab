@@ -1,9 +1,12 @@
 import Head from "next/head";
+import Script from 'next/script';
 import React from "react";
 
 import Header from "../components/Header";
 import Main from "../components/Main";
 import Footer from "../components/Footer";
+
+import { Partytown } from '@builder.io/partytown/react';
 
 class IndexPage extends React.Component {
     constructor(props) {
@@ -73,8 +76,10 @@ class IndexPage extends React.Component {
             <div className={`body ${this.state.loading} ${this.state.isArticleVisible ? "is-article-visible" : ""}`}>
                 <div>
                     <Head>
-                        <title>Next.js Starter</title>
+                        <title>Dimension Next</title>
                         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600,600i" rel="stylesheet" />
+                        <Partytown debug={true} forward={['dataLayer.push']} />
+                        <Script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" type="text/partytown" />
                     </Head>
 
                     <style />
