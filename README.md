@@ -9,7 +9,7 @@ To do:
   Replace Fonts with  
   And to fix these warnings:
   <img src="pnpm-warnings.png" alt="pnpm warnings" title="Pnpm Warnings">
-![]()
+
 
 # nextjs-starter-dimension
 A Next.js starter based on the Dimension site template, designed by HTML5 UP. Check out https://codebushi.com/nextjs-website-starters/ for more Next.js starters and templates.
