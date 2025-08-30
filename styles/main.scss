@@ -49,3 +49,122 @@
 	img > div.logo {
 		vertical-align: middle;
 	}
+/* ==========================================================================
+   REMOÇÃO ESPECÍFICA - APENAS LINHAS VERMELHAS DE DEBUG
+   ========================================================================== */
+
+/* Remover apenas outlines vermelhos específicos de debug */
+[style*="outline: 2px solid red"],
+[style*="outline: 3px solid red"], 
+[style*="outline: 2px dashed red"],
+[style*="border: 2px solid red"],
+[style*="border: 3px solid red"] {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Remover apenas elementos de debug específicos */
+[class*="debug"],
+[class*="Debug"] {
+  display: none !important;
+}
+
+/* Remover outlines apenas se forem vermelhos (mais específico) */
+*[style*="red"] {
+  &[style*="outline"],
+  &[style*="border"] {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+}
+
+/* Preservar as bordas e linhas normais do design */
+#header,
+#main,
+#footer,
+.border,
+[class*="border"],
+[class*="line"] {
+  /* Manter bordas normais - não aplicar none aqui */
+  outline: initial !important;
+  box-shadow: initial !important;
+  border: initial !important;
+}
+/* ==========================================================================
+   AJUSTE DE ESPAÇAMENTO DO FOOTER - DIREITOS AUTORAIS
+   ========================================================================== */
+#footer .copyright {
+  margin-top: 1.5rem !important;
+}
+
+
+/* Melhorar visualização dos artigos */
+#main article {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Overlay de fundo suave */
+body.is-article-visible::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 100%);
+  z-index: 9997;
+  pointer-events: none !important;
+}
+/* ==========================================================================
+   BOTÃO DE FECHAR PERSONALIZADO PARA ARTIGOS
+   ========================================================================== */
+
+.svg-close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid #2c3e50;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 10002;
+  
+  &:hover {
+    background: #e74c3c;
+    border-color: #e74c3c;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+  }
+  
+  &:active {
+    transform: scale(0.95);
+  }
+  
+  svg {
+    width: 20px;
+    height: 20px;
+    stroke: #2c3e50;
+    stroke-width: 2.5;
+    transition: stroke 0.3s ease;
+  }
+  
+  &:hover svg {
+    stroke: white;
+  }
+}
+
+/* Melhorar a visibilidade do overlay de fundo */
+body.is-article-visible::before {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%) !important;
+  backdrop-filter: blur(5px);
+}

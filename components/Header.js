@@ -1,34 +1,120 @@
 import PropTypes from 'prop-types';
 import Image from "next/image";
-import SVGIMG from "../public/diamond.svg";
+import LanguageSelector from "./LanguageSelector";
 
-const Header = (props) => (
-    <header id="header" style={props.timeout ? {display: 'none'} : {}}>
-        <div className="logo">
-        <Image src={SVGIMG} alt={""}/>
+const Header = (props) => {
+  const { language, onOpenArticle, timeout, onLanguageChange } = props;
+
+  // Conteúdo traduzido
+  const translations = {
+    PT: {
+      title: "NetLab",
+      subtitle: "soluções profissionais que elevam a presença da<br />sua marca e conectam o seu negócio ao futuro digital",
+      navItems: ["áreas de atuação", "portfólio", "dna netlab", "contactos"]
+    },
+    EN: {
+      title: "NetLab", 
+      subtitle: "professional solutions that elevate your brand's<br />presence and connect your business to the digital future",
+      navItems: ["Home", "Services", "Portfolio", "Process", "About", "Contact"]
+    }
+  };
+
+  const current = translations[language] || translations.PT;
+  const articleIds = ['intro', 'services', 'work', 'process', 'about', 'contact'];
+
+  return (
+    <header id="header" style={timeout ? {display: 'none'} : {}}>
+      <div className="logo">
+        <Image 
+          src="/logo.png"
+          alt={"NetLab logo"}
+          width={65}
+          height={100}
+          priority
+          className="logo-image"
+        />
+      </div>
+      <div className="content">
+        <div className="inner">
+          <h1>{current.title}</h1>
+          <p dangerouslySetInnerHTML={{ __html: current.subtitle }} />
         </div>
-        <div className="content">
-            <div className="inner">
-                <h1>Dimension for NextJS 13</h1>
-                <p>A fully responsive site template designed by <a href="https://html5up.net">HTML5 UP</a> and released<br />
-                for free under the <a href="https://html5up.net/license">Creative Commons</a> license. Subsequently refactored<br />
-                 by <a href="https://github.com/crenaz/">@crenaz</a> for <a href="https://reactjs.org/blog/2022/03/29/react-v18.html">React18</a> and <a href="https://nextjs.org/blog/next-13">Next13</a> with <a href="https://partytown.builder.io/">PartyTown</a></p>
-            </div>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="javascript:;" onClick={() => {props.onOpenArticle('intro')}}>Intro</a></li>
-                <li><a href="javascript:;" onClick={() => {props.onOpenArticle('work')}}>Work</a></li>
-                <li><a href="javascript:;" onClick={() => {props.onOpenArticle('about')}}>About</a></li>
-                <li><a href="javascript:;" onClick={() => {props.onOpenArticle('contact')}}>Contact</a></li>
-            </ul>
-        </nav>
+      </div>
+      <nav>
+        <ul>
+          {current.navItems.map((item, index) => (
+            <li key={index}>
+              <a 
+                href="javascript:;" 
+                onClick={() => onOpenArticle(articleIds[index])}
+              >
+                {item}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      <LanguageSelector onLanguageChange={onLanguageChange} language={language} />
+      
+      {/* Estilos combinados */}
+      <style jsx>{`
+        /* Remover pseudo-elementos */
+        #header::before,
+        #header::after {
+          display: none !important;
+          content: none !important;
+        }
+        
+        body::after,
+        html::after,
+        #__next::after,
+        #wrapper::after {
+          right: auto !important;
+          content: none !important;
+        }
+        
+        .language-selector::before,
+        .language-selector::after,
+        [class*="language"]::before,
+        [class*="language"]::after {
+          display: none !important;
+          content: none !important;
+        }
+        
+        /* Estilos para o logo */
+        .logo {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          background: var(--accent-color);
+          margin: 0 0 0rem 0px;
+          border: 2px solid #fff;
+          box-shadow: 0 0 15px rgba(0,0,0,0.1);
+          position: relative;
+        }
+        
+        .logo-image {
+          position: relative;
+          top: 0px; /* Ajuste este valor para descer mais ou menos */
+          object-fit: contain;
+        }
+      `}</style>
     </header>
-)
+  );
+};
 
 Header.propTypes = {
-    onOpenArticle: PropTypes.func,
-    timeout: PropTypes.bool
-}
+  onOpenArticle: PropTypes.func,
+  onLanguageChange: PropTypes.func,
+  timeout: PropTypes.bool,
+  language: PropTypes.string
+};
 
-export default Header
+Header.defaultProps = {
+  language: 'PT'
+};
+
+export default Header;
